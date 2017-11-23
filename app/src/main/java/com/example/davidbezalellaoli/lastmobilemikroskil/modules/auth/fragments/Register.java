@@ -31,7 +31,7 @@ public class Register extends Fragment {
     private View view;
     private ProgressBar progressBar;
     private LinearLayout login;
-    private TextView loginText;
+    private TextView loginText, prodiText;
     private Button register;
     private EditText registerName, registerNim, registerPassword, registerRePassword;
 
@@ -55,6 +55,7 @@ public class Register extends Fragment {
     private void initview() {
         progressBar = (ProgressBar) view.findViewById(R.id.register_progress);
         loginText = (TextView) view.findViewById(R.id.register_loginText);
+        prodiText = (TextView) view.findViewById(R.id.register_prodi);
         login = (LinearLayout) view.findViewById(R.id.register_login);
 
         loginText.setPaintFlags(loginText.getPaintFlags() | Paint.UNDERLINE_TEXT_FLAG);
@@ -77,6 +78,13 @@ public class Register extends Fragment {
             }
         });
         
+        prodiText.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                popupDialog("Daftar Kode Program Studi\n021 => (D-3) Manajemen Informatika\n111 => (S-1) Teknik Informatika\n211 => (S-1) Sistem Informasi\n711 => (S-1) Manajemen\n811 => (S-1) Akuntansi\n421 => (S-2) Magister Teknologi Informasi");
+            }
+        });
+
         register.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick (View view) {
