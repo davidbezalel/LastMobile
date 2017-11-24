@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">Last Mobile</string>
+    <string name="app_title_name">LastMobile</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="ok">OK</string>
+
+    <string name="nim_not_found">Maaf, NIM anda tidak terdaftar</string>
+    <string name="wrong_pwd">Maaf, Password yang anda masukkan salah</string>
+    <string name="all_empty_field">Harap isi semua field</string>
+
+    <string name="error_empty_name">Nama tidak boleh dikosongkan</string>
+    <string name="error_empty_nim">NIM tidak boleh dikosongkan</string>
+    <string name="error_empty_password">Password tidak boleh dikosongkan</string>
+    <string name="error_re_password">Konfirmasi tidak cocok dengan password</string>
+    <string name="invalid_password">Password memerlukan setidaknya 1 : karakter,angka,huruf besar, dan huruf kecil.</string>
+    <string name="invalid_nim">Nim invalid</string>
+    <string name="existing_nim">Maaf NIM telah terdaftar</string>
+    <string name="register_successful">Registrasi berhasil dilakukan. Silahkan login.</string>
+</resources>
