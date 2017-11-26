@@ -184,6 +184,14 @@
 
         </LinearLayout>
 
+        <TextView
+            android:id="@+id/register.prodi"
+            android:layout_marginTop="5dp"
+            android:text="Lihat Kode Program Studi"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"/>
+
     </LinearLayout>
 
     <ProgressBar
