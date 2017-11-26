@@ -17,3 +17,4 @@ If you've already understand this project, please explore it by coding the Regis
 
 ## Authors
 * David Bezalel Laoli (Lecturer)
+* Erick Kwantan (Colleger)
