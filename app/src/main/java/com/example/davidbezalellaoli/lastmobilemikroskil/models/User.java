@@ -15,12 +15,11 @@ public class User {
     private int id;
     public String name, nim;
     private String password;
+    private String secretKey;
 
     public String getSecretKey() {
         return secretKey;
     }
-
-    private String secretKey;
 
     public int getId() {
         return id;

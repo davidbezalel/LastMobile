@@ -17,12 +17,15 @@ import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.davidbezalellaoli.lastmobilemikroskil.Main;
 import com.example.davidbezalellaoli.lastmobilemikroskil.R;
 import com.example.davidbezalellaoli.lastmobilemikroskil.models.User;
 import com.example.davidbezalellaoli.lastmobilemikroskil.modules.auth.activities.AuthParent;
 import com.example.davidbezalellaoli.lastmobilemikroskil.utils.Session;
+
+import org.w3c.dom.Text;
 
 /**
  * A simple {@link Fragment} subclass.
