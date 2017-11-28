@@ -31,10 +31,7 @@ dependencies {
     compile 'com.android.support:support-v4:26.+'
     compile 'com.squareup.retrofit2:converter-gson:2.1.0'
     compile 'com.android.support:design:26.+'
-<<<<<<< HEAD
-=======
     compile 'com.android.support:cardview-v7:26.+'
->>>>>>> 1717a03fc5e886cd133437e8d4ebcf8ea0398ad6
     compile 'com.android.support:support-vector-drawable:26.+'
     testCompile 'junit:junit:4.12'
 }
