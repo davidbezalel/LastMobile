@@ -9,7 +9,7 @@
         android:roundIcon="@drawable/mikroskil"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Main"></activity>
+        <activity android:name=".Main" />
         <activity
             android:name=".SplashScreen"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar">
@@ -19,8 +19,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".modules.auth.activities.AuthParent"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
+        <activity
+            android:name=".modules.auth.activities.AuthParent"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity
+            android:name=".modules.home.activities.Home"
+            android:label="@string/title_activity_home"></activity>
     </application>
 
 </manifest>
