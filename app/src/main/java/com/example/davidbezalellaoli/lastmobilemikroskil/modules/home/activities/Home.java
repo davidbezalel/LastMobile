@@ -3,33 +3,33 @@ package com.example.davidbezalellaoli.lastmobilemikroskil.modules.home.activitie
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentTransaction;
-import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
+import android.widget.ImageView;
+import android.widget.TextView;
 
+import com.example.davidbezalellaoli.lastmobilemikroskil.Main;
 import com.example.davidbezalellaoli.lastmobilemikroskil.R;
-import com.example.davidbezalellaoli.lastmobilemikroskil.modules.home.fragments.Dashboard;
-import com.example.davidbezalellaoli.lastmobilemikroskil.modules.home.fragments.List;
 
-public class Home extends AppCompatActivity {
+public class Home extends Main {
 
+    private TextView mTextMessage;
+    private TextView title;
+    private ImageView logout;
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
 
         @Override
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-            FragmentManager fragmentManager = getSupportFragmentManager();
-            FragmentTransaction transaction =fragmentManager.beginTransaction();
             switch (item.getItemId()) {
                 case R.id.navigation_home:
-                    transaction.replace(R.id.content,new List()).commit();
+                    getSupportFragmentManager().beginTransaction().replace(R.id.content, new com.example.davidbezalellaoli.lastmobilemikroskil.modules.home.fragments.Home()).commit();
                     return true;
                 case R.id.navigation_dashboard:
-                    transaction.replace(R.id.content,new Dashboard()).commit();
+//                    mTextMessage.setText(R.string.title_dashboard);
                     return true;
                 case R.id.navigation_notifications:
+//                    mTextMessage.setText(R.string.title_notifications);
                     return true;
             }
             return false;
@@ -42,11 +42,10 @@ public class Home extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
+        getSupportFragmentManager().beginTransaction().replace(R.id.content, new com.example.davidbezalellaoli.lastmobilemikroskil.modules.home.fragments.Home()).commit();
+        mTextMessage = (TextView) findViewById(R.id.message);
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
-        FragmentManager fragmentManager = getSupportFragmentManager();
-        FragmentTransaction transaction =fragmentManager.beginTransaction();
-        transaction.replace(R.id.content,new List()).commit();
     }
 
 }
