@@ -77,7 +77,7 @@ public class Register extends Fragment {
                 (getActivity()).getSupportFragmentManager().beginTransaction().replace(R.id.authparent, new Login()).commit();
             }
         });
-        
+
         prodiText.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -95,7 +95,7 @@ public class Register extends Fragment {
                     public void run() {
                         if (userValidation()) {
                             try {
-                                AuthParent.users.add(new User(registerNim.getText().toString(), registerName.getText().toString(), registerPassword.getText().toString()));
+                                AuthParent.users.add(new User(registerNim.getText().toString(), registerName.getText().toString(), registerPassword.getText().toString(),R.drawable.mikroskil));
                                 popupDialog("Akun berhasil terdaftar.");
                             } catch (Exception e) {
                                 e.printStackTrace();

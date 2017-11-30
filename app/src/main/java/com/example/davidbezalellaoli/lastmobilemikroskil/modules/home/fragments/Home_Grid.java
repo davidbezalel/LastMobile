@@ -19,13 +19,13 @@ import com.example.davidbezalellaoli.lastmobilemikroskil.modules.home.adapters.U
 /**
  * A simple {@link Fragment} subclass.
  */
-public class Home extends Fragment {
+public class Home_Grid extends Fragment {
 
     private View view;
     private RecyclerView rv;
     private User_RV_Adapter userRvAdapter;
 
-    public Home() {
+    public Home_Grid() {
     }
 
 
@@ -53,7 +53,7 @@ public class Home extends Fragment {
 
     private void initObject() {
         userRvAdapter = new User_RV_Adapter();
-        userRvAdapter.setType(0);
+        userRvAdapter.setType(1);
         /*setting user rv adapter: inject data to adapter*/
         userRvAdapter.setUsers(SplashScreen.users);
 

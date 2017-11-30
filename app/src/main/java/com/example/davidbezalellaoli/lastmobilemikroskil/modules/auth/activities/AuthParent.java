@@ -22,7 +22,7 @@ public class AuthParent extends AppCompatActivity {
 
         users = new ArrayList<>();
         try {
-            users.add(new User("151110001", "STMIK Mikroskil", "password"));
+            users.add(new User("151110001", "STMIK Mikroskil", "password",R.drawable.mikroskil));
         } catch (Exception e) {
             e.printStackTrace();
         }
