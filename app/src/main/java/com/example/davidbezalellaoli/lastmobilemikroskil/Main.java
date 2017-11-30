@@ -37,7 +37,6 @@ public class Main extends AppCompatActivity {
         title.setText("LastMobile");
 
         progressBar = (ProgressBar) findViewById(R.id.main_progress);
-
         progressBar.setVisibility(View.GONE);
 
 
@@ -53,7 +52,6 @@ public class Main extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Handler _hadler = new Handler();
-                progressBar.setVisibility(View.VISIBLE);
                 _hadler.postDelayed(new Runnable() {
                     @Override
                     public void run() {
@@ -61,7 +59,6 @@ public class Main extends AppCompatActivity {
                         Intent _intent = new Intent(getApplicationContext(), AuthParent.class);
                         startActivity(_intent);
                         finish();
-                        progressBar.setVisibility(View.GONE);
                     }
                 }, 1500);
             }
