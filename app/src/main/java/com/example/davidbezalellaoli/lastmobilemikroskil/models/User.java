@@ -16,7 +16,7 @@ import javax.crypto.spec.SecretKeySpec;
 public class User {
     private static int userIdIncrement = 1;
     private int id;
-    public String name, nim;
+    public String name, nim, profile_image;
     private String password;
     private String secretKey;
 
@@ -60,7 +60,6 @@ public class User {
         * */
         Pattern r = Pattern.compile("(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])([A-Za-z0-9]{8,12})");
         Matcher m = r.matcher(password);
-
         return m.find();
     }
 
@@ -84,5 +83,28 @@ public class User {
         * */
         String prodi = nim.substring(2, 5);
         return prodi.equals("021") || prodi.equals("111") || prodi.equals("211") || prodi.equals("711") || prodi.equals("811") || prodi.equals("421");
+    }
+    public void setProfile_image(String imaga_path){
+        this.profile_image = imaga_path;
+    }
+    public String getProfile_image(){
+        return this.profile_image;
+    }
+    public String getJurusan() {
+        String prodi = this.nim.substring(2, 5);
+        if(prodi.equals("021")){
+            return "(D3) Manajemen Informatika";
+        }else if(prodi.equals("111")){
+            return "(S1) Teknik Informatika";
+        }else if(prodi.equals("211")){
+            return "(S1) Sistem Informasi";
+        }else if( prodi.equals("711")){
+            return "(S1) Manajemen";
+        }else if(prodi.equals("811")){
+            return "(S1) Akuntansi";
+        }else if(prodi.equals("421")){
+            return "(S2) Magister Teknologi Informasi";
+        }
+        return "Jurusan tidak ditemukan";
     }
 }
