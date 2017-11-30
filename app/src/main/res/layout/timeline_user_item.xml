@@ -15,11 +15,17 @@
     android:layout_width="match_parent"
     android:layout_height="150dp">
 
-    <ImageView
+    <TextView
         android:layout_marginLeft="8dp"
         android:layout_gravity="center|left"
         android:src="@drawable/mikroskil"
         android:id="@+id/timelineuseritem.image"
+        android:background="@drawable/circle_bg"
+        android:textColor="@color/colorWhite"
+        android:textAllCaps="true"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        android:gravity="center"
         android:layout_width="80dp"
         android:layout_height="80dp"/>
 

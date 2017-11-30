@@ -2,6 +2,7 @@ package com.example.davidbezalellaoli.lastmobilemikroskil.modules.home.fragments
 
 
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
@@ -21,13 +22,23 @@ import com.example.davidbezalellaoli.lastmobilemikroskil.modules.home.adapters.U
  */
 public class Home extends Fragment {
 
+    public static final int HOME_CODE =0;
+    public static final int DASHBOARD_CODE =1;
+
     private View view;
     private RecyclerView rv;
     private User_RV_Adapter userRvAdapter;
 
+    int mode;
+
     public Home() {
     }
 
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        mode = this.getArguments().getInt("mode");
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -47,7 +58,9 @@ public class Home extends Fragment {
         rv.setLayoutManager(new LinearLayoutManager(getContext()));
 
         /*LayoutManager: Grid*/
-//        rv.setLayoutManager(new GridLayoutManager(getContext(), 2));
+        if(mode==DASHBOARD_CODE) {
+            rv.setLayoutManager(new GridLayoutManager(getContext(), 2));
+        }
         rv.setHasFixedSize(true);
     }
 
@@ -56,6 +69,7 @@ public class Home extends Fragment {
 
         /*setting user rv adapter: inject data to adapter*/
         userRvAdapter.setUsers(SplashScreen.users);
+        userRvAdapter.setMode(mode);
 
         rv.setAdapter(userRvAdapter);
     }

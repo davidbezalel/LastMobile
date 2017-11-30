@@ -21,12 +21,19 @@ public class Home extends Main {
 
         @Override
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+            Bundle bundle = new Bundle();
             switch (item.getItemId()) {
                 case R.id.navigation_home:
-                    getSupportFragmentManager().beginTransaction().replace(R.id.content, new com.example.davidbezalellaoli.lastmobilemikroskil.modules.home.fragments.Home()).commit();
+                    bundle.putInt("mode",com.example.davidbezalellaoli.lastmobilemikroskil.modules.home.fragments.Home.HOME_CODE);
+                    com.example.davidbezalellaoli.lastmobilemikroskil.modules.home.fragments.Home home = new com.example.davidbezalellaoli.lastmobilemikroskil.modules.home.fragments.Home();
+                    home.setArguments(bundle);
+                    getSupportFragmentManager().beginTransaction().replace(R.id.content, home).commit();
                     return true;
                 case R.id.navigation_dashboard:
-//                    mTextMessage.setText(R.string.title_dashboard);
+                    bundle.putInt("mode",com.example.davidbezalellaoli.lastmobilemikroskil.modules.home.fragments.Home.DASHBOARD_CODE);
+                    com.example.davidbezalellaoli.lastmobilemikroskil.modules.home.fragments.Home dashboard = new com.example.davidbezalellaoli.lastmobilemikroskil.modules.home.fragments.Home();
+                    dashboard.setArguments(bundle);
+                    getSupportFragmentManager().beginTransaction().replace(R.id.content, dashboard).commit();
                     return true;
                 case R.id.navigation_notifications:
 //                    mTextMessage.setText(R.string.title_notifications);
@@ -42,7 +49,12 @@ public class Home extends Main {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
-        getSupportFragmentManager().beginTransaction().replace(R.id.content, new com.example.davidbezalellaoli.lastmobilemikroskil.modules.home.fragments.Home()).commit();
+        Bundle bundle = new Bundle();
+        bundle.putInt("mode",com.example.davidbezalellaoli.lastmobilemikroskil.modules.home.fragments.Home.HOME_CODE);
+        com.example.davidbezalellaoli.lastmobilemikroskil.modules.home.fragments.Home home = new com.example.davidbezalellaoli.lastmobilemikroskil.modules.home.fragments.Home();
+        home.setArguments(bundle);
+
+        getSupportFragmentManager().beginTransaction().replace(R.id.content, home).commit();
         mTextMessage = (TextView) findViewById(R.id.message);
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
