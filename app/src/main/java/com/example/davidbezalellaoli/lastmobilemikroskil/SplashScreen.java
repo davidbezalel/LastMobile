@@ -24,10 +24,10 @@ public class SplashScreen extends AppCompatActivity {
 
         users = new ArrayList<>();
         try {
-            users.add(new User("151110001", "STMIK Mikroskil", "password"));
-            users.add(new User("151110002", "STMIK Mikroskil", "password"));
-            users.add(new User("151110003", "STMIK Mikroskil", "password"));
-            users.add(new User("151110004", "STMIK Mikroskil", "password"));
+            users.add(new User("151110001", "Andy", "password"));
+            users.add(new User("151110002", "Bobby", "password"));
+            users.add(new User("151110003", "Cindy", "password"));
+            users.add(new User("151110004", "Dessy", "password"));
         } catch (Exception e) {
             e.printStackTrace();
         }

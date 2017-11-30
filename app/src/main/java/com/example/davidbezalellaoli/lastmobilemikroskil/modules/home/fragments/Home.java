@@ -32,7 +32,7 @@ public class Home extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        view = inflater.inflate(R.layout.fragment_dashboard, container, false);
+        view = inflater.inflate(R.layout.fragment_home, container, false);
 
         initView();
         initObject();
@@ -41,7 +41,7 @@ public class Home extends Fragment {
     }
 
     private void initView() {
-        rv = (RecyclerView) view.findViewById(R.id.dashboard_rv);
+        rv = (RecyclerView) view.findViewById(R.id.home_rv);
 
         /*LayoutManager: linear*/
         rv.setLayoutManager(new LinearLayoutManager(getContext()));

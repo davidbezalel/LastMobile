@@ -2,12 +2,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.davidbezalellaoli.lastmobilemikroskil.modules.home.fragments.List">
+    tools:context="com.example.davidbezalellaoli.lastmobilemikroskil.modules.home.fragments.Notification">
 
     <!-- TODO: Update blank fragment layout -->
     <TextView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        tools:text="@string/hello_blank_fragment" />
 
 </FrameLayout>
