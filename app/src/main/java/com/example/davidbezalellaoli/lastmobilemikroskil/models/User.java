@@ -1,6 +1,10 @@
 package com.example.davidbezalellaoli.lastmobilemikroskil.models;
 
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.util.Base64;
+
+import com.example.davidbezalellaoli.lastmobilemikroskil.R;
 import com.example.davidbezalellaoli.lastmobilemikroskil.utils.AesEncrypt;
 
 import java.util.regex.Matcher;
@@ -19,6 +23,7 @@ public class User {
     public String name, nim;
     private String password;
     private String secretKey;
+    public int imagePofil;
 
     public String getSecretKey() {
         return secretKey;
@@ -32,12 +37,15 @@ public class User {
         return password;
     }
 
-    public User (String nim, String name, String password) throws Exception {
+
+
+    public User (String nim, String name, String password,int imageProfil) throws Exception {
         this.id = userIdIncrement;
         this.nim = nim;
         this.name = name;
         this.secretKey = AesEncrypt.getInstance().getSecretKey();
         this.password = AesEncrypt.getInstance().encrypt(password, encodedStringSecretKeyToString(this.secretKey));
+        this.imagePofil = imageProfil;
         userIdIncrement++;
     }
 
@@ -84,5 +92,25 @@ public class User {
         * */
         String prodi = nim.substring(2, 5);
         return prodi.equals("021") || prodi.equals("111") || prodi.equals("211") || prodi.equals("711") || prodi.equals("811") || prodi.equals("421");
+    }
+
+    public String getProgramStudi (String nim) {
+        String prodi = nim.substring(2, 5);
+        switch(prodi) {
+            case "021":
+                return "Manajemen Informatika";
+            case "111":
+                return "Teknik Informatika";
+            case "211":
+                return "Sistem Informasi";
+            case "711":
+                return "Manajemen";
+            case "811":
+                return "Akuntansi";
+            case "421":
+                return "Magister Teknologi Informasi";
+            default :
+                return "Bukan mahasiswa sini hehe";
+        }
     }
 }
