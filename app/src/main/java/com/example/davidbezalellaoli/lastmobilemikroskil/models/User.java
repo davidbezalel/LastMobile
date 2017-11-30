@@ -85,4 +85,35 @@ public class User {
         String prodi = nim.substring(2, 5);
         return prodi.equals("021") || prodi.equals("111") || prodi.equals("211") || prodi.equals("711") || prodi.equals("811") || prodi.equals("421");
     }
+    public String getJurusan(){
+        String prodi = nim.substring(2,5);
+        switch (prodi){
+            case "021":
+                return "Manajemen Informatika";
+            case "111":
+                return "Teknik Informatika";
+            case "211":
+                return "Sistem Informasi";
+            case "711":
+                return "Manajemen";
+            case "811":
+                return "Akuntansi";
+            case "421":
+                return "Magister Teknologi Informasi";
+        }
+        return null;
+    }
+
+    public String getNameInitial() {
+        String initial = "";
+        if (name.contains(" ")) {
+            String[] splitName = name.split(" ");
+            for (int i = 0; i <= 1; i++) {
+                initial += splitName[i].substring(0, 1);
+            }
+        }else{
+            initial+= name.substring(0,1);
+        }
+        return initial;
+    }
 }
