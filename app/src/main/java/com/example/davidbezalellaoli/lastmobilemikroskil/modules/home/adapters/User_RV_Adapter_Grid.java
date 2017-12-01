@@ -1,6 +1,7 @@
 package com.example.davidbezalellaoli.lastmobilemikroskil.modules.home.adapters;
 
 import android.content.Context;
+import android.net.Uri;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -20,12 +21,12 @@ import java.util.List;
  * Created by davidbezalellaoli on 11/27/17.
  */
 
-public class User_RV_Adapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
+public class User_RV_Adapter_Grid extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
     private List<User> users;
     private Context context;
 
-    public User_RV_Adapter() {
+    public User_RV_Adapter_Grid() {
         users  = new ArrayList<>();
     }
 
@@ -35,7 +36,7 @@ public class User_RV_Adapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
 
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View _view = LayoutInflater.from(parent.getContext()).inflate(R.layout.timeline_user_item, parent, false);
+        View _view = LayoutInflater.from(parent.getContext()).inflate(R.layout.timeline_user_item_grid, parent, false);
         this.context = parent.getContext();
         return new User_RV_ViewHolder(_view);
     }
@@ -72,10 +73,10 @@ public class User_RV_Adapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
 
         public User_RV_ViewHolder(View itemView) {
             super(itemView);
-            image = (ImageView) itemView.findViewById(R.id.timelineuseritem_image);
-            nim = (TextView) itemView.findViewById(R.id.timelineuseritem_nim);
-            name = (TextView) itemView.findViewById(R.id.timelineuseritem_name);
-            jurusan = (TextView) itemView.findViewById(R.id.timelineuseritem_jurusan);
+            image = (ImageView) itemView.findViewById(R.id.timelineusergriditem_image);
+            nim = (TextView) itemView.findViewById(R.id.timelineusergriditem_nim);
+            name = (TextView) itemView.findViewById(R.id.timelineusergriditem_name);
+            jurusan = (TextView) itemView.findViewById(R.id.timelineusergriditem_jurusan);
         }
     }
 }

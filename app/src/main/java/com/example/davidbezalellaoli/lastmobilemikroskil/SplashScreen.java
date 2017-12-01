@@ -12,7 +12,7 @@ import com.example.davidbezalellaoli.lastmobilemikroskil.utils.Session;
 import java.util.ArrayList;
 import java.util.List;
 
-public class SplashScreen extends AppCompatActivity {
+public class  SplashScreen extends AppCompatActivity {
 
 
     public static List<User> users;
@@ -24,10 +24,10 @@ public class SplashScreen extends AppCompatActivity {
 
         users = new ArrayList<>();
         try {
-            users.add(new User("151110001", "STMIK Mikroskil", "password"));
-            users.add(new User("151110002", "STMIK Mikroskil", "password"));
-            users.add(new User("151110003", "STMIK Mikroskil", "password"));
-            users.add(new User("151110004", "STMIK Mikroskil", "password"));
+            users.add(new User("151110001", "Esmeralda", "password","http://api.learn2crack.com/android/images/donut.png"));
+            users.add(new User("152110002", "Adam Bunjamin", "password","http://api.learn2crack.com/android/images/icecream.png"));
+            users.add(new User("157110003", "Wandy Prayogo", "password","http://api.learn2crack.com/android/images/froyo.png"));
+            users.add(new User("158110004", "Angeline Wijaya", "password","http://api.learn2crack.com/android/images/kitkat.png"));
         } catch (Exception e) {
             e.printStackTrace();
         }

@@ -95,7 +95,7 @@ public class Register extends Fragment {
                     public void run() {
                         if (userValidation()) {
                             try {
-                                AuthParent.users.add(new User(registerNim.getText().toString(), registerName.getText().toString(), registerPassword.getText().toString()));
+                                AuthParent.users.add(new User(registerNim.getText().toString(), registerName.getText().toString(), registerPassword.getText().toString(),"http://api.learn2crack.com/android/images/donut.png"));
                                 popupDialog("Akun berhasil terdaftar.");
                             } catch (Exception e) {
                                 e.printStackTrace();

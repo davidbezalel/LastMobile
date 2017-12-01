@@ -26,7 +26,7 @@ public class Home extends Main {
                     getSupportFragmentManager().beginTransaction().replace(R.id.content, new com.example.davidbezalellaoli.lastmobilemikroskil.modules.home.fragments.Home()).commit();
                     return true;
                 case R.id.navigation_dashboard:
-//                    mTextMessage.setText(R.string.title_dashboard);
+                    getSupportFragmentManager().beginTransaction().replace(R.id.content, new com.example.davidbezalellaoli.lastmobilemikroskil.modules.home.fragments.Dashboard()).commit();
                     return true;
                 case R.id.navigation_notifications:
 //                    mTextMessage.setText(R.string.title_notifications);

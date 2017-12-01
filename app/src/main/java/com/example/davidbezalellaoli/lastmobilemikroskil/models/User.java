@@ -16,7 +16,7 @@ import javax.crypto.spec.SecretKeySpec;
 public class User {
     private static int userIdIncrement = 1;
     private int id;
-    public String name, nim;
+    public String name, nim, jurusan, gambar;
     private String password;
     private String secretKey;
 
@@ -32,10 +32,29 @@ public class User {
         return password;
     }
 
-    public User (String nim, String name, String password) throws Exception {
+    //method untuk menset nilai jurusan berdasarkan nim
+    public String getJurusan(String nim){
+        String prodi = nim.substring(2, 5);
+        if (prodi.equals("111"))
+            return "Teknik Informatika";
+        else if (prodi.equals("211"))
+            return "Sistem Informatika";
+        else if (prodi.equals("021"))
+            return "Manajemen Informatika";
+        else if (prodi.equals("711"))
+            return "Manajemen";
+        else if (prodi.equals("811"))
+            return "Akuntansi";
+        else
+            return "Magister Teknik Informatika";
+    }
+
+    public User (String nim, String name, String password, String gambar) throws Exception {
         this.id = userIdIncrement;
         this.nim = nim;
         this.name = name;
+        this.gambar = gambar;
+        this.jurusan = getJurusan(nim);
         this.secretKey = AesEncrypt.getInstance().getSecretKey();
         this.password = AesEncrypt.getInstance().encrypt(password, encodedStringSecretKeyToString(this.secretKey));
         userIdIncrement++;

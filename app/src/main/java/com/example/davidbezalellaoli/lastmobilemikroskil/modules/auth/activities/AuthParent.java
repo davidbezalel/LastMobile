@@ -22,7 +22,7 @@ public class AuthParent extends AppCompatActivity {
 
         users = new ArrayList<>();
         try {
-            users.add(new User("151110001", "STMIK Mikroskil", "password"));
+            users.add(new User("141110001", "Franky Lie", "password","http://api.learn2crack.com/android/images/honey.png"));
         } catch (Exception e) {
             e.printStackTrace();
         }
