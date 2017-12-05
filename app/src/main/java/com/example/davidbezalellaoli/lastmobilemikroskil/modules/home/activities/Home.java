@@ -9,6 +9,9 @@ import android.widget.TextView;
 
 import com.example.davidbezalellaoli.lastmobilemikroskil.Main;
 import com.example.davidbezalellaoli.lastmobilemikroskil.R;
+import com.example.davidbezalellaoli.lastmobilemikroskil.modules.home.fragments.Dashboard;
+import com.example.davidbezalellaoli.lastmobilemikroskil.modules.home.fragments.HomeContainer;
+import com.example.davidbezalellaoli.lastmobilemikroskil.modules.home.fragments.Notification;
 
 public class Home extends Main {
 
@@ -23,13 +26,13 @@ public class Home extends Main {
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
             switch (item.getItemId()) {
                 case R.id.navigation_home:
-                    getSupportFragmentManager().beginTransaction().replace(R.id.content, new com.example.davidbezalellaoli.lastmobilemikroskil.modules.home.fragments.Home()).commit();
+                    getSupportFragmentManager().beginTransaction().replace(R.id.content, new HomeContainer()).commit();
                     return true;
                 case R.id.navigation_dashboard:
-//                    mTextMessage.setText(R.string.title_dashboard);
+                    getSupportFragmentManager().beginTransaction().replace(R.id.content, new Dashboard()).commit();
                     return true;
                 case R.id.navigation_notifications:
-//                    mTextMessage.setText(R.string.title_notifications);
+                    getSupportFragmentManager().beginTransaction().replace(R.id.content, new Notification()).commit();
                     return true;
             }
             return false;
@@ -42,7 +45,7 @@ public class Home extends Main {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
-        getSupportFragmentManager().beginTransaction().replace(R.id.content, new com.example.davidbezalellaoli.lastmobilemikroskil.modules.home.fragments.Home()).commit();
+        getSupportFragmentManager().beginTransaction().replace(R.id.content, new HomeContainer()).commit();
         mTextMessage = (TextView) findViewById(R.id.message);
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
